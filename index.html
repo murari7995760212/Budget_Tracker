@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Apartment Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Apartment Expense Tracker</h1>
+
+    <!-- Admin Setup -->
+    <div id="adminSetup">
+        <h2>Admin Login</h2>
+        <input type="password" id="adminPassword" placeholder="Set Admin Password" required>
+        <button onclick="setAdmin()">Set Admin</button>
+    </div>
+
+    <!-- Budget Setup -->
+    <div id="budgetSection">
+        <h2>Set Monthly Budget</h2>
+        <input type="number" id="budgetInput" placeholder="Enter Budget (₹)" required>
+        <button onclick="setBudget()">Set Budget</button>
+        <p id="budgetDisplay">Current Budget: ₹0</p>
+    </div>
+
+    <!-- Expense Input -->
+    <form id="expenseForm">
+        <input type="text" id="item" placeholder="Item" required>
+        <input type="number" id="amount" placeholder="Amount (₹)" required>
+        <select id="spender">
+            <option value="Murari">Murari (Admin)</option>
+            <option value="Harshavarden">Harshavarden</option>
+            <option value="Vimal">Vimal</option>
+            <option value="Yashwanth">Yashwanth</option>
+            <option value="Ganesh">Ganesh</option>
+            <option value="">vishwak</option>
+        </select>
+        <button type="submit">Add Expense</button>
+    </form>
+
+    <!-- Expense History -->5
+    <h2>Daily Expenses</h2>
+    <ul id="expenseList"></ul>
+
+    <!-- Reports -->
+    <h2>Reports</h2>
+    <button onclick="generateReport(1)">Daily Report</button>
+    <button onclick="generateReport(7)">Weekly Report</button>
+    <button onclick="generateReport(30)">Monthly Report</button>
+    <div id="report"></div>
+
+    <!-- Admin Controls -->
+    <div id="adminControls" style="display:none;">
+        <h2>Admin Controls</h2>
+        <button onclick="printPurchased()">🖨️ Print Purchased Items</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
